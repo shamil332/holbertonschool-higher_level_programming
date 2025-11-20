@@ -10,7 +10,7 @@ def roman_to_int(roman_string):
         "M": 1000
     }
     if not isinstance(roman_string, str) or roman_string == None:
-        return None
+        return 0
     total = 0
     for i in range(len(roman_string)):
         value = roman[roman_string[i]]
