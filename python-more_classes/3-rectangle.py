@@ -52,5 +52,5 @@ class Rectangle:
         for i in range(self.__height):
             for j in range(self.__width):
                 res += "#"
-            res += ("\n" if not i == self.__height - 1 else "") 
+            res += ("\n" if not i == self.__height - 1 else "")
         return res
