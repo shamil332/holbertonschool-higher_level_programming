@@ -15,6 +15,6 @@ class Student:
 
         result = {}
         for attr in attrs:
-            if hasattr(self, attr): 
+            if hasattr(self, attr):
                 result[attr] = getattr(self, attr)
         return result
