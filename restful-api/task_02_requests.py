@@ -8,7 +8,7 @@ import csv
 url = "https://jsonplaceholder.typicode.com/posts"
 def fetch_and_print_posts():
     res = requests.get(url)
-    print(f"Status code: {res.status_code}")
+    print(f"Status Code: {res.status_code}")
     if res.status_code == 200:
         res_json = res.json()
         for v in res_json:
