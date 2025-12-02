@@ -38,3 +38,11 @@ class Handler(BaseHTTPRequestHandler):
 
         self._set_headers(404, "text/plain; charset=utf-8")
         self.wfile.write(b"Endpoint not found")
+
+def run():
+    port = 8000
+    server = HTTPServer(("", port), Handler)
+    server.serve_forever()
+
+if __name__ == "__main__":
+    run()
