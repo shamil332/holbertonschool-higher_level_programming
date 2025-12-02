@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 import sys
 
