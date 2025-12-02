@@ -30,7 +30,7 @@ class Handler(BaseHTTPRequestHandler):
             return
 
         if path == "/info":
-            self.set_headers(200, "application/json; charset=utf-8")
+            self._set_headers(200, "application/json; charset=utf-8")
             payload = {"version": "1.0", "description": "A simple API built with http.server"}
             body = json.dumps(payload).encode('utf-8')
             self.wfile.write(body)
