@@ -20,7 +20,7 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/data":
             payload = {"name": "John", "age": 30, "city": "New York"}
             body = json.dumps(payload).encode('utf-8')
-            self._set_headers(200, "application/json; charset=utf-8")
+            self._set_headers(200, "application/json")
             self.wfile.write(body)
             return
 
@@ -30,7 +30,7 @@ class Handler(BaseHTTPRequestHandler):
             return
 
         if path == "/info":
-            self._set_headers(200, "application/json; charset=utf-8")
+            self._set_headers(200, "application/json")
             payload = {"version": "1.0", "description": "A simple API built with http.server"}
             body = json.dumps(payload).encode('utf-8')
             self.wfile.write(body)
