@@ -14,6 +14,14 @@ auth = HTTPBasicAuth()
 app.config["JWT_SECRET_KEY"] = "super-secret-key"
 jwt = JWTManager(app)
 
+@jwt.unauthorized_loader
+def handle_missing_token(err):
+    return jsonify({"error": "Missing or invalid token"}), 401
+
+@jwt.invalid_token_loader
+def handle_invalid_token(err):
+    return jsonify({"error": "Invalid token"}), 401
+
 users = {
     "user1": {"username": "user1", "password": generate_password_hash("password"), "role": "user"},
     "admin1": {"username": "admin1", "password": generate_password_hash("password"), "role": "admin"}
