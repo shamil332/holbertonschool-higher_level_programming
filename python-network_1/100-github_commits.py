@@ -9,7 +9,7 @@ import requests
 if __name__ == "__main__":
 	repo = sys.argv[1]
 	user = sys.argv[2]
-	url = f"https://api.github.com/repos/{owner}/{repo}/commits"
+	url = f"https://api.github.com/repos/{user}/{repo}/commits"
 	params = {"per_page": 10}
 	r = requests.get(url, params=params)
 	commits = r.json()
